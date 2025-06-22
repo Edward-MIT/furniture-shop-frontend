@@ -1,5 +1,7 @@
 import { Stack } from "@mui/material"
 import Head from "next/head"
+import Top from "../Top";
+import Footer from "../Footer";
 
 const withLayoutMain = (Component:any) =>{
   return(props:any) => {
@@ -8,13 +10,18 @@ const withLayoutMain = (Component:any) =>{
     <Head><title>FurniShop</title></Head>
     <Stack id="pc-wrap">
 
-      <Stack sx={{background: "#81c784"}}>Header Home</Stack>
+      <Stack id={"top"}>
+        <Top/>
+      </Stack>
+      <Stack className={"header-main"}>Header Filter</Stack>
 
         <Stack id={"main"}>
           <Component {...props}/>
         </Stack>
 
-      <Stack sx={{background: "#a1887f"}}>Footer</Stack>
+      <Stack id={"footer"}>
+        <Footer/>
+      </Stack>
 
     </Stack>
     </>

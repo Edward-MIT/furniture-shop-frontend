@@ -5,6 +5,7 @@ import {CssBaseline} from "@mui/material";
 import { useState } from "react";
 import { light } from "@/public/scss/MaterialTheme";
 import "../public/scss/app.scss"
+import "../public/scss/pc/main.scss"
 
 export default function App({ Component, pageProps }: AppProps) {
   //@ts-ignore
