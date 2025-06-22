@@ -7,6 +7,153 @@
 	.header-main{
 		background: rgb(186, 163, 163);
 	}
+  /* Top SASS*/
+  .navbar {
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  &__logo-icon {
+    background-color: #d97706;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  &__logo-icon-svg {
+    width: 24px;
+    height: 24px;
+    color: white;
+  }
+
+  &__logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+  }
+
+  &__links {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+
+  &__link {
+    color: #374151;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #d97706;
+    }
+  }
+
+  &__right {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  &__lang-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__lang-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.5rem;
+  }
+
+  &__avatar-btn {
+    border-radius: 9px;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &__avatar {
+    height: 20px;
+    width: 2opx;
+  }
+
+  &__mobile-toggle {
+    @media (min-width: 7px) {
+      display: none;
+    }
+  }
+
+  &__menu-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__mobile {
+    border-top: 1px solid #e5e7eb;
+    background-color: #ffffff;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__mobile-links {
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__mobile-link {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    color: #374151;
+    text-decoration: none;
+
+    &:hover {
+      color: #d97706;
+    }
+  }
+
+  &__mobile-footer {
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 
 
   /* Footer*/
