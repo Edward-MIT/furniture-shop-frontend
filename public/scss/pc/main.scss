@@ -1,11 +1,15 @@
 /** IMPORTS **/
+@use '/public/scss/variables.scss';
+@use '/public/scss/pc/homepage/homepage.scss';
 
 #pc-wrap{
 	#top{
 		background:brown;
 	}
 	.header-main{
-		background: rgb(186, 163, 163);
+		background: #fff7ed;
+    width: 100%;
+    height: auto;
 	}
   /* Top SASS*/
   .navbar {
@@ -151,6 +155,41 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+}
+
+/* HeaderFilter */
+
+.hero-section {
+  background: linear-gradient(to right, #fffbeb, #fff7ed);
+  padding: 4rem 0;
+
+  .hero-content {
+    text-align: center;
+
+    .hero-title {
+      font-weight: 700;
+      font-size: 2.5rem;
+
+      @media (min-width: 768px) {
+        font-size: 3.75rem;
+      }
+
+      .highlight {
+        display: block;
+        color: #d97706; // amber-600 equivalent
+      }
+    }
+
+    .hero-subtitle {
+      color: #4b5563; // gray-600 equivalent
+      max-width: 36rem;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-buttons {
+      margin-top: 1rem;
+    }
   }
 }
 

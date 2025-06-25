@@ -13,11 +13,11 @@ export default function HomeNavbar() {
 
   const navLinks = [
     { href: '/', label: 'HOME' },
-    { href: '/properties', label: 'PROPERTIES' },
-    { href: '/agents', label: 'AGENTS' },
+    { href: '/property', label: 'PROPERTIES' },
+    { href: '/agent', label: 'AGENTS' },
     { href: '/community', label: 'COMMUNITY' },
     { href: '/my-page', label: 'MY PAGE' },
-    { href: '/cs-center', label: 'CS CENTER' },
+    { href: '/cs', label: 'CS' },
   ];
 
   return (
