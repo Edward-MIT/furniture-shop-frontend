@@ -1,9 +1,12 @@
+import CommunityHighlights from "@/libs/components/homepage/CommunityHighlights";
+import Events from "@/libs/components/homepage/Ewents";
 import PopularProperties from "@/libs/components/homepage/PopularProperties";
+import TopAgents from "@/libs/components/homepage/TopAgents";
+import TopProperties from "@/libs/components/homepage/TopProperties";
+
 import TrendProperties from "@/libs/components/homepage/TrendProperties";
 import withLayoutMain from "@/libs/components/layout/LayoutHome";
-import { Box, Container, Stack } from "@mui/material";
-import { brown, green } from "@mui/material/colors";
-import { TrendingDown } from "lucide-react";
+import { Stack } from "@mui/material";
 import { NextPage } from "next";
 
 
@@ -24,19 +27,19 @@ const Home:NextPage = () => {
       </Stack>
 
       <Stack>
-        <Stack className="container">Top Properties</Stack>
+        <Stack className="container"><TopProperties/></Stack>
       </Stack>
 
       <Stack>
-        <Stack className="container">Top Agents</Stack>
+        <Stack className="container"><TopAgents/></Stack>
       </Stack>
 
       <Stack>
-        <Stack className="container">Upcoming Events</Stack>
+        <Stack className="container"><Events/></Stack>
       </Stack>
 
       <Stack>
-        <Stack className="container">Community Highlights</Stack>
+        <Stack className="container"><CommunityHighlights/></Stack>
       </Stack>
 
    </Stack>

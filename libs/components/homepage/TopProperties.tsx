@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { ChevronRight, TrendingDown } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import TrendPropertyCard from "./TrendPropertyCard";
-
 const mockProperties = [
   {
     id: 1,
@@ -62,30 +61,91 @@ const mockProperties = [
   }
 ];
 
+const topAgents = [
+  {
+    id: 1,
+    name: 'Sarah Johnson',
+    avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
+    properties: 45,
+    rating: 4.9,
+    specialty: 'Living Room Furniture'
+  },
+  {
+    id: 2,
+    name: 'Michael Chen',
+    avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
+    properties: 38,
+    rating: 4.8,
+    specialty: 'Office & Dining'
+  },
+  {
+    id: 3,
+    name: 'Emma Wilson',
+    avatar: 'https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop',
+    properties: 52,
+    rating: 4.9,
+    specialty: 'Bedroom Sets'
+  }
+];
 
-const TrendProperties = () => {
-  const trendProperties = mockProperties.sort((a, b) => b.likes - a.likes);
-  return(
-      <section className="trending-section">
+const events = [
+  {
+    id: 1,
+    title: 'Summer Furniture Sale',
+    date: '2024-07-15',
+    description: 'Up to 40% off on all outdoor furniture'
+  },
+  {
+    id: 2,
+    title: 'Home Styling Workshop',
+    date: '2024-07-20',
+    description: 'Learn interior design tips from professionals'
+  }
+];
+
+const communityHighlights = [
+  {
+    id: 1,
+    title: 'Best Furniture Arrangements for Small Spaces',
+    author: 'Design Pro',
+    replies: 23,
+    category: 'Tips & Tricks'
+  },
+  {
+    id: 2,
+    title: 'Quality Check: My Experience with Premium Sofas',
+    author: 'Furniture Lover',
+    replies: 15,
+    category: 'Reviews'
+  }
+];
+
+
+const TopProperties = () => {
+  const topProperties = mockProperties.slice(0,4);
+
+  return (
+       <section className="top-properties-section">
       <div className="section-header">
         <div>
-          <h2 className="section-title">Trending Properties</h2>
-          <p className="section-subtitle">Most liked furniture this week</p>
+          <h2 className="section-title">Top Properties</h2>
+          <p className="section-subtitle">Premium quality selections</p>
         </div>
         <Button variant="outline" asChild>
-          <Link href="/properties" className="view-all-link">
+          <Link href="/property" className="view-all-link">
             View All <ChevronRight className="chevron-icon" />
           </Link>
         </Button>
       </div>
 
       <div className="property-grid">
-        {trendProperties.map((property) => (
+        {topProperties.map((property) => (
           <TrendPropertyCard key={property.id} property={property} />
         ))}
       </div>
     </section>
   );
+
 }
 
-export default TrendProperties;
+export default TopProperties;

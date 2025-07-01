@@ -1,75 +1,68 @@
-import { Eye, Heart } from "lucide-react"
+import { Bed, ChefHat, Eye, Heart, Home, Sofa } from "lucide-react"
 import { Badge } from "../ui/badge"
 import { Card, CardContent } from "../ui/card"
 import { Button } from "../ui/button"
 import Link from "next/link"
+import { useState } from "react"
 
 
 
-const TrendPropertCard = () => {
+const TrendPropertyCard = ({property}: {property:any}) => {
+  const [liked, setLiked] = useState(false);
   return (
-       <Card className="property-card">
-      <div className="property-image-container">
+        <Card className="property-card">
+      <div className="image-wrapper">
         <img
-          src='https://tse2.mm.bing.net/th?id=OIP.ajRJhWSQygdDZ4lYhVvViAHaHa&pid=Api&P=0&h=220'
-          alt={'Bella'}
+          src={property.image}
+          alt={property.name}
           className="property-image"
         />
-        <Badge
-         className="property-badge"
-          // className={`property-badge ${
-          //   property.type === "rent" ? "rent" : "sale"
-          // }`}
-        >
-          {/* {property.type === "rent" ? "For Rent" : "For Sale"} */}
-          Rent
+        <Badge className={`property-badge ${property.type === "rent" ? "rent" : "sale"}`}>
+          {property.type === "rent" ? "For Rent" : "For Sale"}
         </Badge>
       </div>
 
-      <CardContent className="property-content">
-        <div className="property-header">
-          <h3 className="property-title">Furniture</h3>
-          <div className="property-prices">
-            <p className="price">1300</p>
-             1300(
-              <p className="sale-price">1200</p>
-            )
+      <CardContent className="card-content">
+        <div className="card-header">
+          <h3 className="property-name">{property.name}</h3>
+          <div className="price-section">
+            <p className="price">{property.price}</p>
+            {property.salePrice && (
+              <p className="sale-price">{property.salePrice}</p>
+            )}
           </div>
         </div>
 
-        <p className="property-description">best for sleep</p>
+        <p className="property-desc">{property.description}</p>
 
-        <div className="property-meta">
+        <div className="card-meta">
           <div className="category">
-            {/* {property.category === "Living Room" && <Sofa className="icon" />}
+            {property.category === "Living Room" && <Sofa className="icon" />}
             {property.category === "Bedroom" && <Bed className="icon" />}
             {property.category === "Dining Room" && <ChefHat className="icon" />}
-            {property.category === "Office" && <Home className="icon" />} */}
-            <span>Office</span>
+            {property.category === "Office" && <Home className="icon" />}
+            <span className="label">{property.category}</span>
           </div>
 
           <div className="stats">
             <div className="views">
               <Eye className="icon" />
-              <span>23</span>
+              <span>{property.views}</span>
             </div>
             <button
-              // onClick={() => setLiked(!liked)}
-              // className={`likes ${liked ? "liked" : ""}`}
+              onClick={() => setLiked(!liked)}
+              className={`likes ${liked ? "liked" : ""}`}
             >
               <Heart className="icon" />
-              <span>23000
-                {/* {property.likes + (liked ? 1 : 0)} */}
-
-              </span>
+              <span>{property.likes + (liked ? 1 : 0)}</span>
             </button>
           </div>
         </div>
 
-        <div className="property-footer">
-          <span className="agent">by Edward</span>
+        <div className="card-footer">
+          <span className="agent">by {property.agent}</span>
           <Button size="sm" asChild>
-            <Link href={`/property/`}>View Details</Link>
+            <Link href={`/properties/${property.id}`}>View Details</Link>
           </Button>
         </div>
       </CardContent>
@@ -78,4 +71,4 @@ const TrendPropertCard = () => {
   )
 }
 
-export default TrendPropertCard
+export default TrendPropertyCard
