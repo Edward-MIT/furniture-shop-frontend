@@ -1,0 +1,264 @@
+#pc-wrap{
+  // agent-card
+  .agent-card {
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  &__content {
+    padding: 1.5rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__avatar-wrapper {
+    position: relative;
+    border-radius: 10px;
+  }
+
+  &__avatar {
+    width: 8px !important;
+    height: 8px;
+    border-radius: 20px;
+  }
+
+  &__verified {
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #3b82f6; // blue-500
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 0.25rem;
+    border-radius: 50%;
+  }
+
+  &__verified-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+
+  &__name {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  &__specialty {
+    color: #d97706; // amber-600
+    font-weight: 500;
+  }
+
+  &__rating {
+    text-align: right;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 0.25rem;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  &__star-icon {
+    width: 1rem;
+    height: 1rem;
+    fill: #facc15; // yellow-400
+    color: #facc15;
+  }
+
+  &__review-count {
+    color: #6b7280; // gray-500
+    font-size: 0.875rem;
+  }
+
+  &__experience {
+    font-size: 0.875rem;
+    color: #4b5563; // gray-600
+  }
+
+  &__description {
+    color: #4b5563;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__contact-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__button-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.25rem;
+    border-color: #3b82f6;
+  }
+}
+
+// agent-main
+.agent-page {
+  max-width: 80rem; // ~1280px
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  @media (min-width: 640px) {
+    padding: 2rem 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 2rem 2rem;
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+
+    h1.agent-page__title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+
+    p.agent-page__subtitle {
+      color: #4b5563;
+    }
+  }
+
+  &__filters-card {
+    margin-bottom: 2rem;
+  }
+
+  &__filters-content {
+    padding: 1.5rem;
+  }
+
+  &__filters-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  &__search-box {
+    position: relative;
+    flex: 1;
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &__search-input {
+    padding-left: 2.5rem; // to account for the icon
+  }
+
+  &__select {
+    width: 12rem;
+  }
+
+  &__select-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+
+  &__result-count {
+    margin-bottom: 1.5rem;
+
+    p {
+      color: #4b5563;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__page-button {
+    width: 2.5rem;
+  }
+}
+
+
+
+}
